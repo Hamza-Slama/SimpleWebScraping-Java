@@ -21,16 +21,15 @@ import java.util.*;
  * Created by Hamza Slama (Hamzeoui) on 11/17/18 .
  * Email : hamzaslama8@gmail.com
  */
-public class MyteckProductScrapper { public static String BASE_URL = "https://www.mytek.tn";
+public class MyteckProductScrapper {
 
-    public static String BASE_URL_PC_PORTABLE = "https://www.mytek.tn/13-pc-portable#/page-";
-
+    public static String BASE_URL = "https://www.mytek.tn";
     private static final String SAMPLE_CSV_FILE = "./myteckPCPortable.csv";
     private static final int NBR_PAGE = 19;
 
 
     public static void main(String[] args) throws Exception {
-
+       String BASE_URL_PC_PORTABLE = "https://www.mytek.tn/13-pc-portable?selected_filters=page-";
         ArrayList<MyteckProduct> maps = getLinkHashMap(BASE_URL_PC_PORTABLE);
         System.out.println("\n");
 //        maps.forEach(myteckProduct -> System.out.println(myteckProduct.getPrice()));
@@ -69,7 +68,11 @@ public class MyteckProductScrapper { public static String BASE_URL = "https://ww
             while(countPage<NBR_PAGE){
 
                 System.out.println("Page number ° "+countPage +"------------\n \n ");
-            final Document documents = Jsoup.connect(BASE_URL+countPage)
+                String url = BASE_URL+Integer.toString(countPage) ;
+                System.out.println("-------------------------------------\n");
+                System.out.println("URL " + url);
+                System.out.println("-------------------------------------\n");
+            final Document documents = Jsoup.connect(url)
                     .userAgent("Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:25.0) Gecko/20100101 Firefox/25.0")
                     .referrer("http://www.google.com")
                     .ignoreHttpErrors(true)
