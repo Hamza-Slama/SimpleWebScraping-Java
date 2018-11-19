@@ -191,6 +191,7 @@ public class MyLinkScraper {
 1-myteck
 2- https://www.jumia.com.tn/ordinateurs-portables/
 3-https://www.wiki.tn/pc-portable-120.html
+3- https://www.wiki.tn/pc-portable-120.html?selected_filters=page-5
 4- https://www.spacenet.tn/ordinateur/ordinateurs-portables/pc-portable.html
 5-https://www.scoop.com.tn/scoop-1-0-0-pc-portables-pc-portables
 6-http://www.electro-tunis.tn/28-pc-portable
