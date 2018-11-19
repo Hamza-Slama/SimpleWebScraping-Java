@@ -24,12 +24,15 @@ import java.util.ArrayList;
 public class MyWikiProductScrapper {
 
 //    public static String BASE_URL = "https://www.mytek.tn";
-    private static final String SAMPLE_CSV_FILE = "./WikiPCPortable.csv";
-    private static final int NBR_PAGE = 18;
+    private static final String SAMPLE_CSV_FILE = "./WikiPCPortableGamer.csv";
+    private static final int NBR_PAGE = 3;
 
 
     public static void main(String[] args) throws Exception {
-        String BASE_URL_PC_PORTABLE = "https://www.wiki.tn/pc-portable-120.html?selected_filters=page-";
+        //PC_PORTABLE
+//        String BASE_URL_PC_PORTABLE = "https://www.wiki.tn/pc-portable-120.html?selected_filters=page-";
+        //PC_GAMER
+        String BASE_URL_PC_PORTABLE = "https://www.wiki.tn/pc-portable-gamer-85.html?selected_filters=page-";
         ArrayList<MyteckProduct> maps = getLinkHashMap(BASE_URL_PC_PORTABLE);
         Charset charset = Charset.forName("UTF-8");
         maps.forEach(myteckProduct -> System.out.println(myteckProduct.getPrice()));

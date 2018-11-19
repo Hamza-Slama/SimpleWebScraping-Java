@@ -24,12 +24,16 @@ import java.util.*;
 public class MyteckProductScrapper {
 
     public static String BASE_URL = "https://www.mytek.tn";
-    private static final String SAMPLE_CSV_FILE = "./myteckPCPortable.csv";
-    private static final int NBR_PAGE = 19;
+    private static final String SAMPLE_CSV_FILE = "./myteckPCGamer.csv";
+//    private static final int NBR_PAGE = 19;
+    private static final int NBR_PAGE = 3;
 
 
     public static void main(String[] args) throws Exception {
-       String BASE_URL_PC_PORTABLE = "https://www.mytek.tn/13-pc-portable?selected_filters=page-";
+        //PC_PORTABLE
+//       String BASE_URL_PC_PORTABLE = "https://www.mytek.tn/13-pc-portable?selected_filters=page-";
+        //PC_GAMER
+       String BASE_URL_PC_PORTABLE = "https://www.mytek.tn/15-pc-gamer-tunisie?selected_filters=page-";
         ArrayList<MyteckProduct> maps = getLinkHashMap(BASE_URL_PC_PORTABLE);
         System.out.println("\n");
 //        maps.forEach(myteckProduct -> System.out.println(myteckProduct.getPrice()));
