@@ -1,4 +1,4 @@
-package csv;
+package model;
 
 /**
  * Created by Hamza Slama (Hamzeoui) on 11/17/18 .

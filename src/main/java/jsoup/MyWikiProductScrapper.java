@@ -17,26 +17,25 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 
+import static utils.Const.CSV_FILE_WIKI_PC_GAMER;
+import static utils.Const.WIKI_URL_PC_GAMER;
+
 /**
  * Created by Hamza Slama (Hamzeoui) on 11/19/18 .
  * Email : hamzaslama8@gmail.com
  */
 public class MyWikiProductScrapper {
 
-//    public static String BASE_URL = "https://www.mytek.tn";
-    private static final String SAMPLE_CSV_FILE = "./WikiPCPortableGamer.csv";
+
     private static final int NBR_PAGE = 3;
 
 
     public static void main(String[] args) throws Exception {
-        //PC_PORTABLE
-//        String BASE_URL_PC_PORTABLE = "https://www.wiki.tn/pc-portable-120.html?selected_filters=page-";
-        //PC_GAMER
-        String BASE_URL_PC_PORTABLE = "https://www.wiki.tn/pc-portable-gamer-85.html?selected_filters=page-";
-        ArrayList<MyteckProduct> maps = getLinkHashMap(BASE_URL_PC_PORTABLE);
+
+        ArrayList<MyteckProduct> maps = getLinkHashMap(WIKI_URL_PC_GAMER);
         Charset charset = Charset.forName("UTF-8");
         maps.forEach(myteckProduct -> System.out.println(myteckProduct.getPrice()));
-        try (BufferedWriter writer = Files.newBufferedWriter(Paths.get(SAMPLE_CSV_FILE));
+        try (BufferedWriter writer = Files.newBufferedWriter(Paths.get(CSV_FILE_WIKI_PC_GAMER));
              CSVPrinter csvPrinter = new CSVPrinter(writer, CSVFormat.DEFAULT
                      .withHeader("ID", "productName", "price", "desciption","linkToDetails","imgPath"));) {
 
@@ -58,8 +57,6 @@ public class MyWikiProductScrapper {
     }
 
     public static  ArrayList<MyteckProduct> getLinkHashMap (String BASE_URL){
-        long start = System.currentTimeMillis();
-        int count2 = 0 ;
         String productName ="";
         String price ="";
         String desciption="" ;
@@ -140,6 +137,3 @@ public class MyWikiProductScrapper {
 
 
 }
-
-
-//product_list grid row

@@ -16,6 +16,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.*;
+import static utils.Const.*;
 
 /**
  * Created by Hamza Slama (Hamzeoui) on 11/17/18 .
@@ -23,21 +24,17 @@ import java.util.*;
  */
 public class MyteckProductScrapper {
 
-    public static String BASE_URL = "https://www.mytek.tn";
-    private static final String SAMPLE_CSV_FILE = "./myteckPCGamer.csv";
-//    private static final int NBR_PAGE = 19;
-    private static final int NBR_PAGE = 3;
+
+    private static final int NBR_PAGE_PC_PORTABLE = 19;
+//    private static final int NBR_PAGE_PC_GAMER = 3;
 
 
     public static void main(String[] args) throws Exception {
-        //PC_PORTABLE
-//       String BASE_URL_PC_PORTABLE = "https://www.mytek.tn/13-pc-portable?selected_filters=page-";
-        //PC_GAMER
-       String BASE_URL_PC_PORTABLE = "https://www.mytek.tn/15-pc-gamer-tunisie?selected_filters=page-";
-        ArrayList<MyteckProduct> maps = getLinkHashMap(BASE_URL_PC_PORTABLE);
+
+        ArrayList<MyteckProduct> maps = getLinkHashMap(MYTECK_URL_PC_PORTABLE);
         System.out.println("\n");
 //        maps.forEach(myteckProduct -> System.out.println(myteckProduct.getPrice()));
-        try (BufferedWriter writer = Files.newBufferedWriter(Paths.get(SAMPLE_CSV_FILE));
+        try (BufferedWriter writer = Files.newBufferedWriter(Paths.get(CSV_FILE_MY_TECK_PC_PORTABLE));
              CSVPrinter csvPrinter = new CSVPrinter(writer, CSVFormat.DEFAULT
                      .withHeader("ID", "productName", "price", "desciption","linkToDetails","imgPath"));) {
 
@@ -69,7 +66,7 @@ public class MyteckProductScrapper {
         ArrayList<MyteckProduct> myteckProducts = new ArrayList<>();
         int countPage = 1 ;
         try {
-            while(countPage<NBR_PAGE){
+            while(countPage<NBR_PAGE_PC_PORTABLE){
 
                 System.out.println("Page number ° "+countPage +"------------\n \n ");
                 String url = BASE_URL+Integer.toString(countPage) ;

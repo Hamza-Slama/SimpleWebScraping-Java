@@ -16,24 +16,20 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.*;
 
+import static utils.Const.*;
+
 /**
  * Created by Hamza Slama (Hamzeoui) on 11/14/18 .
  * Email : hamzaslama8@gmail.com
  */
 
 public class MyLinkScraper {
-    //psvm
-    public static String BASE_URL = "https://www.mytek.tn";
-    public static String BASE_URL_JUMIA = "https://www.jumia.com.tn/ordinateurs-portables/";
-    public static String BASE_URL_WIKI = "https://www.wiki.tn/pc-portable-120.html";
-//    public static String BASE_URL = "https://www.tutorialspoint.com/";
-    private static final String SAMPLE_CSV_FILE = "./WIKILinkHashMpas.csv";
-    private static final String SAMPLE_CSV_FILE_HashMap = "./WIKILinkSet.csv";
+
 
     public static void main(String[] args) throws Exception {
 
-          Set<DataHolder> listLink = getLinks(BASE_URL_WIKI);
-          HashMap<String, Data> maps = getLinkHashMap(BASE_URL_WIKI);
+          Set<DataHolder> listLink = getLinks(MY_TECK_BASE_URL);
+          HashMap<String, Data> maps = getLinkHashMap(MY_TECK_BASE_URL);
 
         try (
                 BufferedWriter writer = Files.newBufferedWriter(Paths.get(SAMPLE_CSV_FILE));
@@ -187,15 +183,5 @@ public class MyLinkScraper {
     }
 }
 
-/*/*
-1-myteck
-2- https://www.jumia.com.tn/ordinateurs-portables/
-3-https://www.wiki.tn/pc-portable-120.html
-3- https://www.wiki.tn/pc-portable-120.html?selected_filters=page-5
-4- https://www.spacenet.tn/ordinateur/ordinateurs-portables/pc-portable.html
-5-https://www.scoop.com.tn/scoop-1-0-0-pc-portables-pc-portables
-6-http://www.electro-tunis.tn/28-pc-portable
-7http://www.mega.tn/informatique/ordinateur_portable
-8-https://informatica.tn/24-pc-portable
- */
+
 

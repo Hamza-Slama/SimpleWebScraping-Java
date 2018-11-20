@@ -4,6 +4,7 @@ package csv;
  * Created by Hamza Slama (Hamzeoui) on 11/17/18 .
  * Email : hamzaslama8@gmail.com
  */
+import model.Employer;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVPrinter;
