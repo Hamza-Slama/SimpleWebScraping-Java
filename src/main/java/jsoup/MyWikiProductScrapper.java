@@ -18,7 +18,9 @@ import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 
 import static utils.Const.CSV_FILE_WIKI_PC_GAMER;
+import static utils.Const.CSV_FILE_WIKI_PC_PORTABLE;
 import static utils.Const.WIKI_URL_PC_GAMER;
+import static utils.Const.WIKI_URL_PC_PORTABLE;
 
 /**
  * Created by Hamza Slama (Hamzeoui) on 11/19/18 .
@@ -27,15 +29,15 @@ import static utils.Const.WIKI_URL_PC_GAMER;
 public class MyWikiProductScrapper {
 
 
-    private static final int NBR_PAGE = 3;
+    private static final int NBR_PAGE = 17;
 
 
     public static void main(String[] args) throws Exception {
 
-        ArrayList<MyteckProduct> maps = getLinkHashMap(WIKI_URL_PC_GAMER);
+        ArrayList<MyteckProduct> maps = getLinkHashMap(WIKI_URL_PC_PORTABLE);
         Charset charset = Charset.forName("UTF-8");
         maps.forEach(myteckProduct -> System.out.println(myteckProduct.getPrice()));
-        try (BufferedWriter writer = Files.newBufferedWriter(Paths.get(CSV_FILE_WIKI_PC_GAMER));
+        try (BufferedWriter writer = Files.newBufferedWriter(Paths.get(CSV_FILE_WIKI_PC_PORTABLE));
              CSVPrinter csvPrinter = new CSVPrinter(writer, CSVFormat.DEFAULT
                      .withHeader("ID", "productName", "price", "desciption","linkToDetails","imgPath"));) {
 

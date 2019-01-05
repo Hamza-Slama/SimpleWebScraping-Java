@@ -17,7 +17,7 @@ public class Const {
 
     //WIKI
     public static String WIKI_BASE_URL = "https://www.wiki.tn";
-    public static String WIKI_URL_PC_PORTABLE = "https://www.wiki.tn/pc-portable-120.html?selected_filters=page-";
+    public static String WIKI_URL_PC_PORTABLE = "https://www.wiki.tn/c/pc-portable-120.html?selected_filters=page-";
     public static String WIKI_URL_PC_GAMER= "https://www.wiki.tn/pc-portable-gamer-85.html?selected_filters=page-";
 
 
@@ -31,6 +31,7 @@ public class Const {
     public static  String SAMPLE_CSV_FILE_HashMap = "./WIKILinkSet.csv";
 
     public static  String CSV_FILE_WIKI_PC_GAMER = "./WikiPCPortableGamer.csv";
+    public static  String CSV_FILE_WIKI_PC_PORTABLE = "./WikiPCPortable.csv";
 
     public static  String CSV_FILE_MY_TECK_GAMER = "./myteckPCGamer.csv";
     public static  String CSV_FILE_MY_TECK_PC_PORTABLE = "./myteckPCPortable.csv";

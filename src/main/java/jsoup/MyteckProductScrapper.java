@@ -25,16 +25,17 @@ import static utils.Const.*;
 public class MyteckProductScrapper {
 
 
-    private static final int NBR_PAGE_PC_PORTABLE = 19;
-//    private static final int NBR_PAGE_PC_GAMER = 3;
+//    private static final int NBR_PAGE_PC_PORTABLE = 19;
+    private static final int NBR_PAGE_PC_GAMER = 3;
 
 
     public static void main(String[] args) throws Exception {
 
-        ArrayList<MyteckProduct> maps = getLinkHashMap(MYTECK_URL_PC_PORTABLE);
+        ArrayList<MyteckProduct> maps = getLinkHashMap(MYTECK_URL_PC_GAMER);
+        //ArrayList<MyteckProduct> maps = getLinkHashMap(MYTECK_URL_PC_PORTABLE);
         System.out.println("\n");
 //        maps.forEach(myteckProduct -> System.out.println(myteckProduct.getPrice()));
-        try (BufferedWriter writer = Files.newBufferedWriter(Paths.get(CSV_FILE_MY_TECK_PC_PORTABLE));
+        try (BufferedWriter writer = Files.newBufferedWriter(Paths.get(CSV_FILE_MY_TECK_GAMER));
              CSVPrinter csvPrinter = new CSVPrinter(writer, CSVFormat.DEFAULT
                      .withHeader("ID", "productName", "price", "desciption","linkToDetails","imgPath"));) {
 
@@ -66,7 +67,7 @@ public class MyteckProductScrapper {
         ArrayList<MyteckProduct> myteckProducts = new ArrayList<>();
         int countPage = 1 ;
         try {
-            while(countPage<NBR_PAGE_PC_PORTABLE){
+            while(countPage<NBR_PAGE_PC_GAMER){
 
                 System.out.println("Page number ° "+countPage +"------------\n \n ");
                 String url = BASE_URL+Integer.toString(countPage) ;
