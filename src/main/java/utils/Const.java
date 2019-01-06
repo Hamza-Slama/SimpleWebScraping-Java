@@ -37,6 +37,7 @@ public class Const {
     public static  String CSV_FILE_MY_TECK_PC_PORTABLE = "./myteckPCPortable.csv";
 
     public static  String CSV_FILE_JUMIA_PC_PORTABLE = "./JumiaPCPortable.csv";
+    public static  String CSV_FAKE_DATA = "./data.csv";
 
     public static void main(String[] args) {
         Float n = Float.valueOf(2);
