@@ -116,7 +116,7 @@ public class FirstExp {
       		List<RecommendedItem> recommendations = recommender.recommend(itemId,nbrmItem);      
 			
      		for (RecommendedItem recommendation : recommendations) {
-			System.out.println(recommendation);
+			System.out.println(recommendation.getItemID());
                       //  System.out.println();
                       arr.add(recommendation.getItemID());
 		}
