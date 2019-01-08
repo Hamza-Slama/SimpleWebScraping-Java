@@ -26,8 +26,8 @@ public class TestingClass {
         ArrayList<DataModelTest> m = new ArrayList<>();
         m.add(new DataModelTest(1,"d","d",n,"d","d","d"));
         */
-      String s = "MEMOIRE";
-      if (s.contains("MEMOIRE"))System.out.println("ok");
+      String s = "Frequence Processeur";
+      if (s.contains("Référence Processeur"))System.out.println("ok");
     }
     
 }

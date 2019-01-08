@@ -34,6 +34,7 @@ public class Const {
     public static  String CSV_FILE_WIKI_PC_PORTABLE = "./WikiPCPortable.csv";
 
     public static  String CSV_FILE_MY_TECK_GAMER = "./myteckPCGamer.csv";
+    public static  String CSV_FILE_ALL_MY_TECK_PRODUCT = "./myteckPcCollection.csv";
     public static  String CSV_FILE_MY_TECK_PC_PORTABLE = "./myteckPCPortable.csv";
 
     public static  String CSV_FILE_JUMIA_PC_PORTABLE = "./JumiaPCPortable.csv";

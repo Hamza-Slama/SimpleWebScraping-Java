@@ -13,11 +13,11 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @author hamzewi
  */
 public class MyTeckFullModel {
-        private static  final AtomicInteger count = new AtomicInteger(0);
-    private int id ;
+    private static  final AtomicInteger count = new AtomicInteger(0);
+    private int id ; 
     private String productName ;
     private String price ;
-    private ArrayList<String> fulldescription  ; 
+    private MyTeckFullDescription fulldescription  ; 
     private String desciption ;
     private String linkToDetails ;
     private String imgPath;
@@ -25,8 +25,8 @@ public class MyTeckFullModel {
     public MyTeckFullModel() {
     }
 
-    public MyTeckFullModel( String productName, String price, ArrayList<String> fulldescription, String desciption, String linkToDetails, String imgPath) {
-         id = count.incrementAndGet();
+    public MyTeckFullModel( String productName, String price, MyTeckFullDescription fulldescription, String desciption, String linkToDetails, String imgPath) {
+        id=count.incrementAndGet();
         this.productName = productName;
         this.price = price;
         this.fulldescription = fulldescription;
@@ -35,16 +35,6 @@ public class MyTeckFullModel {
         this.imgPath = imgPath;
     }
 
-    public ArrayList<String> getFulldescription() {
-        return fulldescription;
-    }
-
-    public void setFulldescription(ArrayList<String> fulldescription) {
-        this.fulldescription = fulldescription;
-    }
-
-    
-
     public int getId() {
         return id;
     }
@@ -52,6 +42,16 @@ public class MyTeckFullModel {
     public void setId(int id) {
         this.id = id;
     }
+
+    
+    public MyTeckFullDescription getFulldescription() {
+        return fulldescription;
+    }
+
+    public void setFulldescription(MyTeckFullDescription fulldescription) {
+        this.fulldescription = fulldescription;
+    }
+
 
     public String getProductName() {
         return productName;
