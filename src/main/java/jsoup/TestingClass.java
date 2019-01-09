@@ -26,8 +26,14 @@ public class TestingClass {
         ArrayList<DataModelTest> m = new ArrayList<>();
         m.add(new DataModelTest(1,"d","d",n,"d","d","d"));
         */
-      String s = "Frequence Processeur";
-      if (s.contains("Référence Processeur"))System.out.println("ok");
+      /*String s = "Frequence Processeur";
+      if (s.contains("Référence Processeur"))System.out.println("ok");*/
+     String description  = "Ecran:&nbsp;15.6'' IPS FHD (1920 x 1080 px),&nbsp;Processeur:&nbsp;Intel Core I5-7440HQ 7è gén (2.8 GHz jusqu‘à 3.8 GHz, 6Mo de mémoire cache, Quad-Core),&nbsp;Systéme d'exploitation: Windows 10 Pro&nbsp;-&nbsp;Mémoire RAM:&nbsp;8Go DDR4 2400 MHz,&nbsp;Disque Dur:&nbsp;256 Go SSDTo -&nbsp;Carte Graphique:&nbsp;NVIDIA&nbsp;Quadro&nbsp;M620 (2&nbsp;Go de mémoire GDDR5)&nbsp;avec USB-C&nbsp;, USB&nbsp;3.0 , HDMI, VGA et lecteur de cartes ";
+      
+      String unescapedString = org.jsoup.parser.Parser.unescapeEntities(description, true);
+                        System.out.println(unescapedString);
+                        description = unescapedString ;
+        System.out.println(description);
     }
     
 }

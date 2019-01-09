@@ -38,9 +38,7 @@ public class MyteckProductScrapper {
         ArrayList<MyTeckFullModel> maps = getMyTeckProductWithDescription(MYTECK_URL_PC_PORTABLE,NBR_PAGE_PC_PORTABLE);
         System.out.println("\n --------------- pc Gamer -------------------- \n ");
         ArrayList<MyTeckFullModel> mapsPcGamer = getMyTeckProductWithDescription(MYTECK_URL_PC_GAMER,NBR_PAGE_PC_GAMER);
-        System.out.println("\n");
         maps.addAll(mapsPcGamer);
-//        maps.forEach(myteckProduct -> System.out.println(myteckProduct.getPrice()));
         try (BufferedWriter writer = Files.newBufferedWriter(Paths.get(CSV_FILE_ALL_MY_TECK_PRODUCT));
              CSVPrinter csvPrinter = new CSVPrinter(writer, CSVFormat.DEFAULT
                      .withHeader("ID", "productName", "price","processeur","freqProcesseur",
@@ -66,15 +64,8 @@ public class MyteckProductScrapper {
                     e.printStackTrace();
                 }
             });
-
             csvPrinter.flush();
         }
-String url  = "https://www.mytek.tn/pc-portable/18036-pc-portable-schneider-scl141ctp-quad-core-2go-32go-emmc.html?fbclid=IwAR1anBf8qtXumT9-zFAbiMA49rtvRIDvubHBzxy1yrz-HDomQvbiri6X-lw";
-/*ArrayList<String> arr=  getDescriptionMyTeckByProduct(url);
-        System.out.println(arr.size());*/
-//getMyTeckProduct(MYTECK_URL_PC_PORTABLE+"1");
-//getMyTeckProductWithDescription(MYTECK_URL_PC_PORTABLE);
-//getDescriptionMyTeckByProduct(url);
     }
 
    
@@ -134,8 +125,9 @@ public static  ArrayList<MyteckProduct> getMyTeckProduct (String BASE_URL){
                     Elements links1 =   rows.select("p.product-desc");
                     for (Element link1 : links1){
                         System.out.println("------- Description-----\n");
-                        System.out.println(link1.html());
-                        desciption = link1.html() ;
+                        String unescapedString = org.jsoup.parser.Parser.unescapeEntities(link1.text(), true);
+                        System.out.println(link1.text());
+                        desciption = link1.text() ;
 
                     }
                     System.out.println("----------------Prices -----------------------\n");
@@ -294,8 +286,11 @@ public static  ArrayList<MyTeckFullModel> getMyTeckProductWithDescription (Strin
                     Elements links1 =   rows.select("p.product-desc");
                     for (Element link1 : links1){
                         System.out.println("------- Description-----\n");
-                        System.out.println(link1.html());
-                        desciption = link1.html() ;
+                         String unescapedString = org.jsoup.parser.Parser.unescapeEntities(link1.text(), true);
+                        System.out.println(unescapedString);
+                        desciption = unescapedString ;
+                       /* System.out.println(link1.html());
+                        desciption = link1.html() ;*/
 
                     }
                     System.out.println("----------------Prices -----------------------\n");
